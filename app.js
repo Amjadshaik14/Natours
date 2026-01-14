@@ -86,9 +86,41 @@ const deleteTour = (req, res) => {
   });
 };
 
-// app.get("/api/v1/tours", getAllTours);
+// Users Routes
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: "Error",
+    message: "This route is not yet defined!",
+  });
+};
 
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: "Error",
+    message: "This route is not yet defined!",
+  });
+};
+// app.get("/api/v1/tours", getAllTours);
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: "Error",
+    message: "This route is not yet defined!",
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: "Error",
+    message: "This route is not yet defined!",
+  });
+};
 // POST Method to create a tour
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: "Error",
+    message: "This route is not yet defined!",
+  });
+};
 // app.post("/api/v1/tours", createTour);
 
 // GET method with an id parameter to get a specific tour
@@ -109,6 +141,12 @@ app
   .patch(updateTour)
   .delete(deleteTour);
 
+app.route("/api/v1/users").get(getAllUsers).post(createUser);
+app
+  .route("/api/v1/users/:id")
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 app.listen(PORT, () => {
   console.log(`Server started at port: ${PORT}`);
 });
