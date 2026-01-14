@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 1414;
 
+app.use(express.json());
 const tourRouter = require("./Routes/tourRoutes");
 const userRouter = require("./Routes/userRoutes");
 
