@@ -60,6 +60,36 @@ app.get("/api/v1/tours/:id", (req, res) => {
   });
 });
 
+// PATCH method to update a specific tour
+
+app.patch("/api/v1/tours/:id", (req, res) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: "Failed",
+      messge: "Invalid ID",
+    });
+  }
+
+  res.status(200).json({
+    status: "Success",
+    tour: "<---Your updated tour here--->",
+  });
+});
+
+// DELETE method to delete a tour
+app.delete("/api/v1/tours/:id", (req, res) => {
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: "Failed",
+      messge: "Invalid ID",
+    });
+  }
+
+  res.status(204).json({
+    status: "Success",
+    data: null,
+  });
+});
 app.listen(PORT, () => {
   console.log(`Server started at port: ${PORT}`);
 });
